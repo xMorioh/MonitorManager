@@ -175,9 +175,10 @@ namespace MonitorManager
                                         string oldBrightnessValue = exeProcess.StandardOutput.ReadLine();
                                         // Trim to only the last two digits
                                         int length = oldBrightnessValue.Length;
-                                        int num = length - 2;
+                                        int num = length - 3;
                                         int length2 = length - num;
                                         oldBrightnessValue = oldBrightnessValue.Substring(num, length2);
+                                        oldBrightnessValue = oldBrightnessValue.Replace(" ", "");
                                         oldBrightnessValues.SetValue(oldBrightnessValue, i);
                                     }
                                 }
