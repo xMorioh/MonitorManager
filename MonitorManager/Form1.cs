@@ -183,9 +183,9 @@ namespace MonitorManager
                                     }
                                 }
                             }
-                            catch
+                            catch (Exception ex)
                             {
-                                // Log error.
+                                System.Windows.Forms.MessageBox.Show("Something went wrong fetching the luminance values from monitor " + (i + 1) + "...\n\n" + ex.Message);
                             }
                         }
 
@@ -200,9 +200,9 @@ namespace MonitorManager
                                 exeProcess.WaitForExit();
                             }
                         }
-                        catch
+                        catch (Exception ex)
                         {
-                            // Log error.
+                            System.Windows.Forms.MessageBox.Show("Something went wrong setting the luminance value on your monitor " + (i + 1) + "...\n\n" + ex.Message);
                         }
                     }
                     ApplicationStarted = true;
@@ -234,9 +234,9 @@ namespace MonitorManager
                                 exeProcess.WaitForExit();
                             }
                         }
-                        catch
+                        catch (Exception ex)
                         {
-                            // Log error.
+                            System.Windows.Forms.MessageBox.Show("Something went wrong setting the old luminance value on your monitor " + (i + 1) + "...\n\n" + ex.Message);
                         }
                     }
                     ApplicationStarted = false;
@@ -294,17 +294,40 @@ namespace MonitorManager
                 startInfo.Arguments = GetArgs;
                 startInfo.RedirectStandardOutput = false;
 
-                try
-                {   // Start the process with the info we specified.
-                    // Call WaitForExit and then the using statement will close.
-                    using (Process exeProcess = Process.Start(startInfo))
+                if (Custom_winddcutil_Param_textbox.Text.StartsWith("setvcp"))
+                {
+                    try
+                    {   // Start the process with the info we specified.
+                        // Call WaitForExit and then the using statement will close.
+                        using (Process exeProcess = Process.Start(startInfo))
+                        {
+                            exeProcess.WaitForExit();
+                        }
+                    }
+                    catch (Exception ex)
                     {
-                        exeProcess.WaitForExit();
+                        System.Windows.Forms.MessageBox.Show("Something went wrong...\n\n" + ex.Message);
                     }
                 }
-                catch
+                else
                 {
-                    // Log error.
+                    startInfo.RedirectStandardOutput = true;
+                    try
+                    {   // Start the process with the info we specified.
+                        // Get, read and then store the old brightness values for later change reversal
+                        using (Process exeProcess = Process.Start(startInfo))
+                        {
+                            while (!exeProcess.StandardOutput.EndOfStream)
+                            {
+                                string Output = exeProcess.StandardOutput.ReadLine();
+                                System.Windows.Forms.MessageBox.Show(Output, "Output from: " + Custom_winddcutil_Param_textbox.Text);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        System.Windows.Forms.MessageBox.Show("Something went wrong...\n\n" + ex.Message);
+                    }
                 }
             }
         }
@@ -415,7 +438,7 @@ namespace MonitorManager
                 }
                 catch (Exception ex)
                 {
-                    System.Windows.Forms.MessageBox.Show("Something went wrong fetching one of your Monitors VCP capabilities...\n\n" + ex.Message);
+                    System.Windows.Forms.MessageBox.Show("Something went wrong fetching your Monitor VCP capabilities from monitor " + (i + 1) + "...\n\n" + ex.Message);
                 }
             }
         }
