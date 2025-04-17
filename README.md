@@ -9,7 +9,7 @@ The Goal is to make a small piece of software that would automatically lower mon
 <br>
 This Application is made in .NET C# as a Forms Application.
 <br>
-This Application has a dependency: [winddcutil](https://github.com/scottaxcell/winddcutil)
+This Application has a dependency which will be downloaded automatically after the program has launched and it doesn't exist yet: [winddcutil](https://github.com/scottaxcell/winddcutil)
 
 **Application Features**:
 * Lowers Monitors actual brightness by talking directly to the Monitors chip via VESA-MCCS over VCPs to save energy when a spicific application is launched, the old Brightness values will be restored after the application is closed again
