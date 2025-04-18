@@ -11,5 +11,11 @@
     <Setting Name="Custom_winddcutil_Param_textbox" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="Watcher_winddcutil_Param_Code_textbox" Type="System.String" Scope="User">
+      <Value Profile="(Default)">0x10</Value>
+    </Setting>
+    <Setting Name="Watcher_winddcutil_Param_Value_textbox" Type="System.String" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

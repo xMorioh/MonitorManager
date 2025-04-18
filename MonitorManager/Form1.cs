@@ -23,6 +23,8 @@ namespace MonitorManager
             ApplicationName_textbox.Text = Properties.Settings.Default.ApplicationName_textbox;
             MonitorAmount_comboBox.Text = Properties.Settings.Default.MonitorAmount_comboBox;
             Custom_winddcutil_Param_textbox.Text = Properties.Settings.Default.Custom_winddcutil_Param_textbox;
+            Watcher_winddcutil_Param_Code_textbox.Text = Properties.Settings.Default.Watcher_winddcutil_Param_Code_textbox;
+            Watcher_winddcutil_Param_Value_textbox.Text = Properties.Settings.Default.Watcher_winddcutil_Param_Value_textbox;
 
             //Initiate TrayIcon
             this.components = new System.ComponentModel.Container();
@@ -152,8 +154,8 @@ namespace MonitorManager
                 {
                     for (int i = 0; i < MonitorAmount; i++)
                     {
-                        string GetArgs = "getvcp " + (i + 1) + " 0x10";
-                        string SetArgs = "setvcp " + (i + 1) + " 0x10 0";
+                        string GetArgs = "getvcp " + (i + 1) + " " + Watcher_winddcutil_Param_Code_textbox.Text;
+                        string SetArgs = "setvcp " + (i + 1) + " " + Watcher_winddcutil_Param_Code_textbox.Text + " " + Watcher_winddcutil_Param_Value_textbox.Text;
 
                         ProcessStartInfo startInfo = new ProcessStartInfo();
                         startInfo.CreateNoWindow = true;
@@ -272,6 +274,18 @@ namespace MonitorManager
         private void MonitorAmount_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             Properties.Settings.Default.MonitorAmount_comboBox = MonitorAmount_comboBox.Text;
+            Properties.Settings.Default.Save();
+        }
+
+        private void Watcher_winddcutil_Param_Code_textbox_TextChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.Watcher_winddcutil_Param_Code_textbox = Watcher_winddcutil_Param_Code_textbox.Text;
+            Properties.Settings.Default.Save();
+        }
+        
+        private void Watcher_winddcutil_Param_Value_textbox_TextChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.Watcher_winddcutil_Param_Value_textbox = Watcher_winddcutil_Param_Value_textbox.Text;
             Properties.Settings.Default.Save();
         }
         private void winddcutil_Link_Label_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

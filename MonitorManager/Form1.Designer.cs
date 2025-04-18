@@ -40,6 +40,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.Launch_Custom_Param_Button = new System.Windows.Forms.Button();
             this.winddcutil_Link_Label = new System.Windows.Forms.LinkLabel();
+            this.Watcher_winddcutil_Param_Code_textbox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Watcher_winddcutil_Param_Value_textbox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // timer1
@@ -52,7 +55,7 @@
             // 
             this.ApplicationName_textbox.Location = new System.Drawing.Point(124, 6);
             this.ApplicationName_textbox.Name = "ApplicationName_textbox";
-            this.ApplicationName_textbox.Size = new System.Drawing.Size(298, 20);
+            this.ApplicationName_textbox.Size = new System.Drawing.Size(169, 20);
             this.ApplicationName_textbox.TabIndex = 0;
             this.ApplicationName_textbox.TextChanged += new System.EventHandler(this.ApplicationName_textbox_TextChanged);
             // 
@@ -85,7 +88,7 @@
             // 
             // Get_Monitor_VCP_Button
             // 
-            this.Get_Monitor_VCP_Button.Location = new System.Drawing.Point(327, 41);
+            this.Get_Monitor_VCP_Button.Location = new System.Drawing.Point(324, 41);
             this.Get_Monitor_VCP_Button.Name = "Get_Monitor_VCP_Button";
             this.Get_Monitor_VCP_Button.Size = new System.Drawing.Size(95, 21);
             this.Get_Monitor_VCP_Button.TabIndex = 5;
@@ -97,7 +100,7 @@
             // 
             this.Custom_winddcutil_Param_textbox.Location = new System.Drawing.Point(150, 74);
             this.Custom_winddcutil_Param_textbox.Name = "Custom_winddcutil_Param_textbox";
-            this.Custom_winddcutil_Param_textbox.Size = new System.Drawing.Size(170, 20);
+            this.Custom_winddcutil_Param_textbox.Size = new System.Drawing.Size(143, 20);
             this.Custom_winddcutil_Param_textbox.TabIndex = 6;
             this.Custom_winddcutil_Param_textbox.TextChanged += new System.EventHandler(this.Custom_winddcutil_Param_textbox_TextChanged);
             // 
@@ -112,7 +115,7 @@
             // 
             // Launch_Custom_Param_Button
             // 
-            this.Launch_Custom_Param_Button.Location = new System.Drawing.Point(327, 74);
+            this.Launch_Custom_Param_Button.Location = new System.Drawing.Point(324, 74);
             this.Launch_Custom_Param_Button.Name = "Launch_Custom_Param_Button";
             this.Launch_Custom_Param_Button.Size = new System.Drawing.Size(95, 20);
             this.Launch_Custom_Param_Button.TabIndex = 8;
@@ -131,11 +134,39 @@
             this.winddcutil_Link_Label.Text = "winddcutil Github Page: github.com/scottaxcell/winddcutil";
             this.winddcutil_Link_Label.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.winddcutil_Link_Label_LinkClicked);
             // 
+            // Watcher_winddcutil_Param_Code_textbox
+            // 
+            this.Watcher_winddcutil_Param_Code_textbox.Location = new System.Drawing.Point(323, 6);
+            this.Watcher_winddcutil_Param_Code_textbox.Name = "Watcher_winddcutil_Param_Code_textbox";
+            this.Watcher_winddcutil_Param_Code_textbox.Size = new System.Drawing.Size(45, 20);
+            this.Watcher_winddcutil_Param_Code_textbox.TabIndex = 10;
+            this.Watcher_winddcutil_Param_Code_textbox.TextChanged += new System.EventHandler(this.Watcher_winddcutil_Param_Code_textbox_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(299, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(19, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "=>";
+            // 
+            // Watcher_winddcutil_Param_Value_textbox
+            // 
+            this.Watcher_winddcutil_Param_Value_textbox.Location = new System.Drawing.Point(374, 6);
+            this.Watcher_winddcutil_Param_Value_textbox.Name = "Watcher_winddcutil_Param_Value_textbox";
+            this.Watcher_winddcutil_Param_Value_textbox.Size = new System.Drawing.Size(45, 20);
+            this.Watcher_winddcutil_Param_Value_textbox.TabIndex = 12;
+            this.Watcher_winddcutil_Param_Value_textbox.TextChanged += new System.EventHandler(this.Watcher_winddcutil_Param_Value_textbox_TextChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(434, 126);
+            this.Controls.Add(this.Watcher_winddcutil_Param_Value_textbox);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.Watcher_winddcutil_Param_Code_textbox);
             this.Controls.Add(this.winddcutil_Link_Label);
             this.Controls.Add(this.Launch_Custom_Param_Button);
             this.Controls.Add(this.label3);
@@ -169,6 +200,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button Launch_Custom_Param_Button;
         private System.Windows.Forms.LinkLabel winddcutil_Link_Label;
+        private System.Windows.Forms.TextBox Watcher_winddcutil_Param_Code_textbox;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox Watcher_winddcutil_Param_Value_textbox;
     }
 }
 

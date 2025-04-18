@@ -58,5 +58,29 @@ namespace MonitorManager.Properties {
                 this["Custom_winddcutil_Param_textbox"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0x10")]
+        public string Watcher_winddcutil_Param_Code_textbox {
+            get {
+                return ((string)(this["Watcher_winddcutil_Param_Code_textbox"]));
+            }
+            set {
+                this["Watcher_winddcutil_Param_Code_textbox"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string Watcher_winddcutil_Param_Value_textbox {
+            get {
+                return ((string)(this["Watcher_winddcutil_Param_Value_textbox"]));
+            }
+            set {
+                this["Watcher_winddcutil_Param_Value_textbox"] = value;
+            }
+        }
     }
 }
