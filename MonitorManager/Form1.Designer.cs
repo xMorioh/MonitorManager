@@ -100,7 +100,7 @@
             // 
             this.Custom_winddcutil_Param_textbox.Location = new System.Drawing.Point(150, 74);
             this.Custom_winddcutil_Param_textbox.Name = "Custom_winddcutil_Param_textbox";
-            this.Custom_winddcutil_Param_textbox.Size = new System.Drawing.Size(143, 20);
+            this.Custom_winddcutil_Param_textbox.Size = new System.Drawing.Size(168, 20);
             this.Custom_winddcutil_Param_textbox.TabIndex = 6;
             this.Custom_winddcutil_Param_textbox.TextChanged += new System.EventHandler(this.Custom_winddcutil_Param_textbox_TextChanged);
             // 
