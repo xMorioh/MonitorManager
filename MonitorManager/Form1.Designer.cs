@@ -88,9 +88,9 @@
             // 
             // Get_Monitor_VCP_Button
             // 
-            this.Get_Monitor_VCP_Button.Location = new System.Drawing.Point(324, 41);
+            this.Get_Monitor_VCP_Button.Location = new System.Drawing.Point(323, 41);
             this.Get_Monitor_VCP_Button.Name = "Get_Monitor_VCP_Button";
-            this.Get_Monitor_VCP_Button.Size = new System.Drawing.Size(95, 21);
+            this.Get_Monitor_VCP_Button.Size = new System.Drawing.Size(96, 21);
             this.Get_Monitor_VCP_Button.TabIndex = 5;
             this.Get_Monitor_VCP_Button.Text = "Get Monitor VCP";
             this.Get_Monitor_VCP_Button.UseVisualStyleBackColor = true;
@@ -115,9 +115,9 @@
             // 
             // Launch_Custom_Param_Button
             // 
-            this.Launch_Custom_Param_Button.Location = new System.Drawing.Point(324, 74);
+            this.Launch_Custom_Param_Button.Location = new System.Drawing.Point(323, 74);
             this.Launch_Custom_Param_Button.Name = "Launch_Custom_Param_Button";
-            this.Launch_Custom_Param_Button.Size = new System.Drawing.Size(95, 20);
+            this.Launch_Custom_Param_Button.Size = new System.Drawing.Size(96, 20);
             this.Launch_Custom_Param_Button.TabIndex = 8;
             this.Launch_Custom_Param_Button.Text = "Launch";
             this.Launch_Custom_Param_Button.UseVisualStyleBackColor = true;

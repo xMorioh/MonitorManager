@@ -149,8 +149,18 @@ namespace MonitorManager
                 string WinddcutilExePath = SpecifiedAppdataFolder() + "winddcutil.exe";
                 int MonitorAmount = Convert.ToInt32(MonitorAmount_comboBox.Text);
 
-                Process[] ProcessActive = Process.GetProcessesByName(ApplicationName_textbox.Text);
-                if (ProcessActive.Length != 0)
+                List<string> ApplicationNames = ApplicationName_textbox.ToString().Split(',').ToList();
+                string ApplicationFound = string.Empty;
+                foreach (string Application in ApplicationNames)
+                {
+                    Process[] ProcessActive = Process.GetProcessesByName(Application);
+                    if (ProcessActive.Length != 0)
+                    {
+                        ApplicationFound = ProcessActive.ToString();
+                        break;
+                    }
+                }
+                if (ApplicationFound != string.Empty)
                 {
                     for (int i = 0; i < MonitorAmount; i++)
                     {
@@ -209,7 +219,7 @@ namespace MonitorManager
                     }
                     ApplicationStarted = true;
                 }
-                else if (ProcessActive.Length == 0 && ApplicationStarted == true)
+                else if (ApplicationFound == string.Empty && ApplicationStarted == true)
                 {
                     for (int i = 0; i < MonitorAmount; i++)
                     {
@@ -250,6 +260,7 @@ namespace MonitorManager
         public static string[] MonitorAmounts = new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
         public static string[] oldBrightnessValues = new string[] { "M1", "M2", "M3", "M4", "M5", "M6", "M7", "M8", "M9" };
 
+        //Indices from these Arrays have to match
         public static string[] VCPCodes = new string[] { "04", "05", "06", "01", "A2", "1E", "0E", "3E", "10", "6B", "6D", "6F", "71", "12", "1C", "8C", "52", "54", "72", "56", "58", "7C", "86", "82", "84", "AA", "88", "8B", "8E", "92", "B0", "CA", "CC", "D4", "DA", "DB", "DC", "08", "0A", "1F", "14", "0B", "0C", "8A", "90", "9B", "9C", "9D", "9E", "9F", "A0", "59", "5A", "5B", "5C", "5D", "5E", "11", "17", "16", "18", "1A", "6C", "6E", "70", "2E", "42", "2A", "2C", "40", "24", "26", "20", "22", "28", "29", "43", "3A", "3C", "41", "34", "36", "30", "32", "38", "39", "44", "62", "63", "64", "65", "8D", "8F", "91", "95", "96", "97", "98", "A4", "A5", "9A", "B7", "B8", "B9", "BA", "BB", "BC", "BD", "BE" };
         public static string[] VCPCodeDescription = new string[] { "Image Restore factory defaults", "Image Restore factory luminance / contrast values", "Image Restore factory TV defaults", "Image Degauss", "Image Auto setup on/off", "Image Auto setup", "Image Clock", "Image Clock phase", "Image Luminance", "Image Backlight control Backlight Level: White", "Image Backlight control Backlight Level: Red", "Image Backlight control Backlight Level: Green", "Image Backlight control Backlight Level: Blue", "Image Contrast", "Image Focus", "Image TV Sharpness", "Image Active control", "Image Performance preservation", "Image Gamma", "Image H moiré", "Image V moiré", "Image Adjust zoom", "Image Display scaling", "Image Horizontal mirror (flip)", "Image Vertical mirror (flip)", "Image Screen orientation", "Image Velocity scan modulation", "Image TV channel up / down", "Image TV contrast", "Image TV black level / luminance", "Image Store / Restore Settings", "Image OSD", "Image OSD Language", "Image Stereo video mode", "Image Scan mode", "Image Image mode", "Image Display application", "Color Adjustments Restore factory color defaults", "Color Adjustments Restore factory TV defaults", "Color Adjustments Auto color setup", "Color Adjustments Color temperature Select color preset", "Color Adjustments Color temperature increment", "Color Adjustments Color temperature request", "Color Adjustments Color saturation", "Color Adjustments Hue", "Color Adjustments 6-axis color 6-axis hue Red", "Color Adjustments 6-axis color 6-axis hue Yellow", "Color Adjustments 6-axis color 6-axis hue Green", "Color Adjustments 6-axis color 6-axis hue Cyan", "Color Adjustments 6-axis color 6-axis hue Blue", "Color Adjustments 6-axis color 6-axis hue Magenta", "Color Adjustments 6-axis color 6-axis saturation Red", "Color Adjustments 6-axis color 6-axis saturation Yellow", "Color Adjustments 6-axis color 6-axis saturation Green", "Color Adjustments 6-axis color 6-axis saturation Cyan", "Color Adjustments 6-axis color 6-axis saturation Blue", "Color Adjustments 6-axis color 6-axis saturation Magenta", "Color Adjustments Flesh tone enhancement", "Color Adjustments User vision compensation", "Color Adjustments Video Gain (drive) Red", "Color Adjustments Video Gain (drive) Green", "Color Adjustments Video Gain (drive) Blue", "Color Adjustments Video Black Level Red", "Color Adjustments Video Black Level Green", "Color Adjustments Video Black Level Blue", "Color Adjustments Grey scale expansion", "Geometry Adjustment Horizontal Keystone", "Geometry Adjustment Horizontal Linearity", "Geometry Adjustment Horizontal Linearity balance", "Geometry Adjustment Horizontal Parallelogram", "Geometry Adjustment Horizontal Pincushion", "Geometry Adjustment Horizontal Pincushion balance", "Geometry Adjustment Horizontal Position (phase)", "Geometry Adjustment Horizontal Size", "Geometry Adjustment Horizontal Convergence R/B", "Geometry Adjustment Horizontal Convergence M/G", "Geometry Adjustment Vertical Keystone", "Geometry Adjustment Vertical Linearity", "Geometry Adjustment Vertical Linearity balance", "Geometry Adjustment Vertical Parallelogram", "Geometry Adjustment Vertical Pincushion", "Geometry Adjustment Vertical Pincushion balance", "Geometry Adjustment Vertical Position (phase)", "Geometry Adjustment Vertical Size", "Geometry Adjustment Vertical Convergence R/B", "Geometry Adjustment Vertical Convergence M/G", "Geometry Adjustment Rotation", "Audio Audio: speaker volume", "Audio Audio: speaker pair select", "Audio Audio: microphone volume", "Audio Audio: jack connection status", "Audio Audio mute", "Audio Audio: treble", "Audio Audio: bass", "Position / Size Window position (TL_X)", "Position / Size Window position (TL_Y)", "Position / Size Window position (BR_X)", "Position / Size Window position (BR_Y)", "Control Window Mask Control", "Control Window select", "Window background", "DPVL Support Monitor status", "DPVL Support Packet count", "DPVL Support Monitor X origin", "DPVL Support Monitor Y origin", "DPVL Support Header error count", "DPVL Support Bad CRC error count", "DPVL Support Client ID", "DPVL Support Link control" };
         
