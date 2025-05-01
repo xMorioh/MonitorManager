@@ -19,7 +19,7 @@ This Application has a dependency which will be downloaded automatically after t
 
 **How to use this Application**:
 <br>
-The "Application to watch" field is for you to enter the process name of the application you want to monitor so that if it is detected after a specific tick rate it will then lower your monitors brightness to 0 with default settings. Once the application is closed again it will restore the values from before the change to 0.
+The "Application to watch" field is for you to enter the process name of the application you want to monitor so that if it is detected after a specific tick rate it will then lower your monitors brightness to 0 with default settings. Once the application is closed again it will restore the values from before the change to 0. This field also supports several entries by separating each application you want to watch by a comma aka. vrmonitor,chrome,firefox,notepad
 <br>
 The two fields behind it are for the action that should be taken once the process watcher finds the application you entered, by default it is 0x10 for brightness/luminance and 0 for the corresponding value. The fixed prefix for this Argument is "setvcp *MonitorLoopInteger* " -> VCPCode -> Value.
 <br>
