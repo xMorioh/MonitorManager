@@ -149,18 +149,18 @@ namespace MonitorManager
                 string WinddcutilExePath = SpecifiedAppdataFolder() + "winddcutil.exe";
                 int MonitorAmount = Convert.ToInt32(MonitorAmount_comboBox.Text);
 
-                List<string> ApplicationNames = ApplicationName_textbox.ToString().Split(',').ToList();
-                string ApplicationFound = string.Empty;
+                List<string> ApplicationNames = ApplicationName_textbox.Text.ToString().Split(',').ToList();
+                bool ApplicationFound = false;
                 foreach (string Application in ApplicationNames)
                 {
                     Process[] ProcessActive = Process.GetProcessesByName(Application);
                     if (ProcessActive.Length != 0)
                     {
-                        ApplicationFound = ProcessActive.ToString();
+                        ApplicationFound = true;
                         break;
                     }
                 }
-                if (ApplicationFound != string.Empty)
+                if (ApplicationFound == true)
                 {
                     for (int i = 0; i < MonitorAmount; i++)
                     {
@@ -219,7 +219,7 @@ namespace MonitorManager
                     }
                     ApplicationStarted = true;
                 }
-                else if (ApplicationFound == string.Empty && ApplicationStarted == true)
+                else if (ApplicationFound == false && ApplicationStarted == true)
                 {
                     for (int i = 0; i < MonitorAmount; i++)
                     {
