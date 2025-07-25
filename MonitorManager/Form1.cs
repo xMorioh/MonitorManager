@@ -81,6 +81,15 @@ namespace MonitorManager
 
             base.OnLoad(e);
         }
+        protected override void OnShown(EventArgs e)
+        {
+            //Setting the Windows to SizableToolWindow will make it disappear from ALT+TAB
+            this.FormBorderStyle = FormBorderStyle.SizableToolWindow;
+            Visible = false;
+            Opacity = 0.00;
+
+            base.OnShown(e);
+        }
         private void NotifyIcon_Open(object Sender, EventArgs e)
         {
             // Set the WindowState to normal if the form is minimized.
