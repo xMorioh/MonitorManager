@@ -27,7 +27,7 @@ The two fields behind it are for the action that should be taken once the proces
 The "How many Monitors do you have?" field is to specify how many Monitors you have, this will be used for internal loops to tell the application watcher function and then "Get Monitor VCP" Button how often it should be executed to yield the desired amount of results.
 <br>
 <br>
-The "Custom winddcutil Param" field is for entering a custom argument for the winddcutil application to execute, with the "Launch" Button you can then fire the command to execute winddcutil with the specified arguments.
+The "Custom winddcutil Param" field is for entering a custom argument for the winddcutil application to execute, with the "Launch" Button you can then fire the command to execute winddcutil with the specified arguments. WARNING keep in mind that i highly recommend to use "getvcp" with your command first before you use "setvcp" as you may break your monitor forever if you don't know what setting some parameter had before. If you feel like your monitor is broken and you cannot go back then try to fully discharge the monitor and then turn it on again as this may bring it's old settings back.
 <br>
 <br>
 The "Get Monitor VCP" Button will spawn a new Window with the raw VCP capabilities from your Monitor(s) including a decoded list of functionalities you can use in the "Custom winddcutil Param" field
