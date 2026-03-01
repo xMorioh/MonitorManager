@@ -42,7 +42,7 @@ To run this application via Windows autostart just create a new task in Windows 
 
 **Preview**:
 
-![MonitorManager-Preview](https://github.com/xMorioh/MonitorManager/blob/master/MonitorManager-Preview.png)
+![MonitorManager-Preview](https://codeberg.org/Morioh/MonitorManager/raw/branch/master/MonitorManager-Preview.png)
 <br>
 <br>
-![MonitorManager-Preview2](https://github.com/xMorioh/MonitorManager/blob/master/MonitorManager-Preview2.png)
+![MonitorManager-Preview2](https://codeberg.org/Morioh/MonitorManager/raw/branch/master/MonitorManager-Preview2.png)
