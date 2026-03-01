@@ -1,6 +1,5 @@
 # Morioh's Monitor Manager
-# [Download the latest version here](https://github.com/xMorioh/MonitorManager/releases/latest)
-# [Check out my other Projects on my Website](https://xmorioh.gitlab.io/index.html)
+# THIS PROJECT HAS MOVED TO [https://codeberg.org/Morioh/MonitorManager](https://codeberg.org/Morioh/MonitorManager)
 
 
 **About this Project**
